@@ -1,0 +1,22 @@
+.tech-box {
+  display: inline-flex;
+  align-items: center;
+  background-color: #3b256c;
+  border: 1px solid #a084e8;
+  border-radius: 20px;
+  padding: 8px 18px;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  width: fit-content;
+  gap: 10px;
+}
+
+.icon {
+  color: white;
+}
+
+.text {
+  font-size: 16px;
+  color: white;
+}

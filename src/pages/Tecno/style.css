@@ -1,0 +1,57 @@
+.bodyMainTec {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-align: center;
+  padding-top: 40px;
+  gap: 30px;
+}
+
+.text-tec {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(90deg, #ffffff, #a76ed9);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.text-tec.animate {
+  opacity: 1;
+}
+
+.bodyTec {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.bodyTec.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  #bodyTec {
+    width: 100%;
+    gap: 20px;
+  }
+  .text-tec {
+    font-size: 2.2rem;
+  }
+}

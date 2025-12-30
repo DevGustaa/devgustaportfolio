@@ -1,0 +1,16 @@
+#sobreButton {
+  border-radius: 10px;
+  border: #9c3fe7 1px solid;
+  padding-block: 10px;
+  padding-inline: 30px;
+  text-transform: none;
+}
+
+#sobreButton:hover {
+  background-color: #9c3fe7;
+}
+
+#textButton {
+  font-size: 16px;
+  color: white;
+}
