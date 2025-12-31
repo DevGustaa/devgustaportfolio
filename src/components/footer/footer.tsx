@@ -19,9 +19,21 @@ export const Footer = (): JSX.Element => {
           </div>
         </div>
         <div className="body-footer-button-link">
-          <ButtonFooter Icon={<Github />} />
-          <ButtonFooter Icon={<Linkedin />} />
-          <ButtonFooter Icon={<Mail />} />
+          <ButtonFooter
+            type="primary"
+            link="https://github.com/DevGustaa"
+            Icon={<Github />}
+          />
+          <ButtonFooter
+            type="primary"
+            link="https://www.linkedin.com/in/gustavo-albuquerque-lemos/"
+            Icon={<Linkedin />}
+          />
+          <ButtonFooter
+            type="primary"
+            link="https://mail.google.com/mail/?view=cm&fs=1&to=gustavoalbdeveloper@gmail.com&su=Contato%20pelo%20Portfólio&body=Olá%20Gustavo,%0D%0A%0D%0AGostaria%20de%20entrar%20em%20contato."
+            Icon={<Mail />}
+          />
         </div>
       </div>
       <div className="body-footer-line" />

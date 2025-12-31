@@ -55,7 +55,7 @@ export const skills = {
     {
       title: "Web",
       icon: LanguageOutlinedIcon,
-      color: "azul",
+      color: "rosa",
       tecnology: [{ name: "RESTFULL API" }, { name: "JWT" }],
     },
   ],

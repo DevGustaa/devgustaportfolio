@@ -1,0 +1,141 @@
+.body-contact {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.body-contact-title-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.body-contact-subtitle {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.body-contact-subtitle.animate {
+  opacity: 1;
+}
+
+.body-contact-box {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 40px;
+}
+
+.body-contact-left {
+  height: 550px;
+  width: 390px;
+  border: 1px solid rgb(58, 58, 58);
+  border-radius: 20px;
+  background-color: rgb(31, 31, 31);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 1s ease;
+}
+
+.body-contact-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.body-contact-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.body-contact-right-conecte {
+  height: 300px;
+  width: 390px;
+  background-color: rgb(31, 31, 31);
+  border: 1px solid rgb(58, 58, 58);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 25px;
+  box-sizing: border-box;
+  padding-inline: 30px;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.8s ease, transform 1s ease;
+}
+
+.body-contact-right-conecte.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.body-contact-right-title {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.body-contact-right-options {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.body-contact-right-disp {
+  width: 390px;
+  height: 150px;
+  border-radius: 20px;
+  background-color: rgb(46, 22, 56);
+  border: 1px solid rgb(91, 38, 116);
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 1s;
+}
+
+.body-contact-right-disp.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.body-contact-right-disp {
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 12px;
+}
+
+.body-contact-right-disp-title {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.body-contact-right-disp-subtitle {
+  color: rgb(185, 185, 185);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}

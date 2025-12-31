@@ -1,0 +1,18 @@
+.body-tecno-skill {
+  width: auto;
+  min-width: 30px;
+  height: 25px;
+  background-color: #502378;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 5px;
+  border-radius: 20px;
+  color: #ccb6e0;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #64497b;
+}
+
+.body-tecno-font {
+  font-size: 12px;
+}
