@@ -38,6 +38,7 @@ export const skills = {
         { name: "Node.js" },
         { name: "Express" },
         { name: "Nest.js" },
+        { name: "Java Spring" },
       ],
     },
     {
