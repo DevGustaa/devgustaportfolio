@@ -27,11 +27,10 @@ export const SobreMim = () => {
             <div className="backgroundMiddle">
               <img
                 src={meImage}
-                alt="Icon G"
-                id="iconG"
+                alt="foto do desenvolvedor"
+                id="meImage"
                 className="backgroundMiddle"
               />
-              <p id="techName">Gustavo</p>
             </div>
             <div className="backgroundBottom">
               <img
