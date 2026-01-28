@@ -5,18 +5,15 @@ import "./style.css";
 import { EmailOutlined } from "@mui/icons-material";
 import { LinkConect } from "./linkconect/LinkConecte";
 import { InputForm } from "./inputForm/InputForm";
-import { TurnstileCaptcha } from "../../hooks/capchat";
 import { useState } from "react";
 
 export const Contact = () => {
-  const [captchaOk, setCaptchaOk] = useState(false);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [formKey, setFormKey] = useState(0);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (!captchaOk) return;
 
     setLoading(true);
 
@@ -34,8 +31,8 @@ export const Contact = () => {
       if (!response.ok) throw new Error();
 
       setOpen(true);
+      setFormKey((prev) => prev + 1);
       e.currentTarget.reset();
-      setCaptchaOk(false);
     } finally {
       setLoading(false);
     }
@@ -68,11 +65,10 @@ export const Contact = () => {
       </div>
       <div className="body-contact-box">
         <form
+          key={formKey}
           className={`body-contact-left ${isVisible ? "animate" : ""}`}
           onSubmit={handleSubmit}
         >
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="http://localhost:5173/" />
           <InputForm label="Seu nome" id="name" name="name" type="text" />
           <InputForm label="Seu email" id="email" name="email" type="email" />
           <InputForm
@@ -82,10 +78,9 @@ export const Contact = () => {
             type="text"
             multilinetrue
           />
-          <TurnstileCaptcha onVerify={() => setCaptchaOk(true)} />
           <Button
             type="submit"
-            disabled={!captchaOk || loading}
+            disabled={loading}
             sx={{
               width: "80%",
               height: "50px",
