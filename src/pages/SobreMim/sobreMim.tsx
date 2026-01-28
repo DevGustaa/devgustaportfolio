@@ -3,6 +3,7 @@ import { TechBox } from "../../components/techBox/techBox";
 import IconG from "../../assets/IconG.png";
 import "./style.css";
 import { useInView } from "../../hooks/useInView";
+import meImage from "../../assets/me.jpg";
 
 export const SobreMim = () => {
   const { ref, isVisible } = useInView<HTMLDivElement>({
@@ -10,15 +11,28 @@ export const SobreMim = () => {
   });
 
   return (
-    <div id="body">
-      <p className={`titleMain ${isVisible ? "animate" : ""}`}>Sobre Mim</p>
+    <section id="body-sobre">
+      <p
+        id="body-sobre-title"
+        className={`titleMain ${isVisible ? "animate" : ""}`}
+      >
+        Sobre Mim
+      </p>
       <div id="main">
         <div>
           <div
             ref={ref}
             className={`backgroundImage ${isVisible ? "animate" : ""}`}
           >
-            <div className="backgroundMiddle" />
+            <div className="backgroundMiddle">
+              <img
+                src={meImage}
+                alt="Icon G"
+                id="iconG"
+                className="backgroundMiddle"
+              />
+              <p id="techName">Gustavo</p>
+            </div>
             <div className="backgroundBottom">
               <img
                 src={IconG}
@@ -51,6 +65,6 @@ export const SobreMim = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

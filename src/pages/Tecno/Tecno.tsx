@@ -10,7 +10,7 @@ export const Tecno = (): JSX.Element => {
   });
 
   return (
-    <div className="bodyMainTec">
+    <div className="bodyMainTec" id="bodyMainTec">
       <p className={`text-tec ${isVisible ? "animate" : ""}`} ref={ref}>
         Tecnologias & Habilidades
       </p>

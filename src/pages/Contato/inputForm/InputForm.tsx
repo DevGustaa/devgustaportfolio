@@ -4,13 +4,26 @@ import type { JSX } from "react";
 type InputForm = {
   label: string;
   multilinetrue?: boolean;
+  id?: "email" | "message" | "name";
+  name?: "email" | "message" | "name";
+  type?: "email" | "text";
 };
 
-export const InputForm = ({ label, multilinetrue }: InputForm): JSX.Element => {
+export const InputForm = ({
+  label,
+  multilinetrue,
+  type,
+  id,
+  name,
+}: InputForm): JSX.Element => {
   return (
     <TextField
       label={label}
       variant="filled"
+      required
+      name={name}
+      type={type}
+      id={id}
       multiline={multilinetrue ? true : false}
       rows={multilinetrue ? 4 : 0}
       sx={{

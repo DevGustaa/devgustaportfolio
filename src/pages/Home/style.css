@@ -1,4 +1,4 @@
-#bodyMain {
+#body-home {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -6,6 +6,7 @@
   min-height: 100vh;
   gap: 3rem;
   position: relative;
+  scroll-margin-top: 120px;
 }
 
 #bodyTitle {

@@ -15,15 +15,19 @@ export const Header = (): JSX.Element => {
     <div>
       <div id="bodyHeader">
         <div id="leftHeader">
-          <img src={EyeSimbol} width={100} />
+          <MyButton
+            title="Home"
+            ishome
+            chrildren={<img src={EyeSimbol} width={100} />}
+          />
           <p>{`< Gustavo Albuquerque />`}</p>
         </div>
         {width > 850 ? (
           <div id="rightHeader">
-            <MyButton title="Sobre" />
-            <MyButton title="Habilidade" />
-            <MyButton title="Projetos" />
-            <MyButton title="Contato" />
+            <MyButton title="Sobre" nav="#body-sobre" />
+            <MyButton title="Habilidade" nav="#bodyMainTec" />
+            <MyButton title="Projetos" nav="#body-project" />
+            <MyButton title="Contato" nav="#body-contact" />
           </div>
         ) : (
           <Button onClick={() => setOpen(!open)}>

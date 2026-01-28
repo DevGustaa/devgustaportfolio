@@ -1,18 +1,63 @@
-import { Button } from "@mui/material";
+import { Alert, Button, Snackbar } from "@mui/material";
 import { useInView } from "../../hooks/useInView";
 import { Github, Linkedin, Send } from "lucide-react";
 import "./style.css";
 import { EmailOutlined } from "@mui/icons-material";
 import { LinkConect } from "./linkconect/LinkConecte";
 import { InputForm } from "./inputForm/InputForm";
+import { TurnstileCaptcha } from "../../hooks/capchat";
+import { useState } from "react";
 
 export const Contact = () => {
+  const [captchaOk, setCaptchaOk] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!captchaOk) return;
+
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/gustavoalbdeveloper@gmail.com",
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
+
+      if (!response.ok) throw new Error();
+
+      setOpen(true);
+      e.currentTarget.reset();
+      setCaptchaOk(false);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const { ref, isVisible } = useInView<HTMLDivElement>({
     threshold: 0.3,
   });
 
   return (
-    <div className="body-contact">
+    <div className="body-contact" id="body-contact">
+      <Snackbar
+        open={open}
+        autoHideDuration={4000}
+        onClose={() => setOpen(false)}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert severity="success" onClose={() => setOpen(false)}>
+          Mensagem enviada com sucesso!
+        </Alert>
+      </Snackbar>
+
       <div className="body-contact-title-box">
         <p className={`titleMain ${isVisible ? "animate" : ""}`} ref={ref}>
           Vamos Conversar
@@ -22,14 +67,25 @@ export const Contact = () => {
         </p>
       </div>
       <div className="body-contact-box">
-        <div
+        <form
           className={`body-contact-left ${isVisible ? "animate" : ""}`}
-          ref={ref}
+          onSubmit={handleSubmit}
         >
-          <InputForm label="Seu nome" />
-          <InputForm label="Seu email" />
-          <InputForm label="Mensagem" multilinetrue />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="http://localhost:5173/" />
+          <InputForm label="Seu nome" id="name" name="name" type="text" />
+          <InputForm label="Seu email" id="email" name="email" type="email" />
+          <InputForm
+            label="Mensagem"
+            id="message"
+            name="message"
+            type="text"
+            multilinetrue
+          />
+          <TurnstileCaptcha onVerify={() => setCaptchaOk(true)} />
           <Button
+            type="submit"
+            disabled={!captchaOk || loading}
             sx={{
               width: "80%",
               height: "50px",
@@ -40,9 +96,24 @@ export const Contact = () => {
               gap: "10px",
             }}
           >
-            Enviar Mensagem <Send style={{ width: "15px" }} />
+            {loading ? (
+              <p style={{ fontSize: "16px" }}>Enviando..."</p>
+            ) : (
+              <p
+                style={{
+                  fontSize: "14px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "5px",
+                }}
+              >
+                Enviar Mensagem <Send style={{ width: "15px" }} />
+              </p>
+            )}
           </Button>
-        </div>
+        </form>
+
         <div className="body-contact-right">
           <div
             className={`body-contact-right-conecte ${

@@ -12,7 +12,7 @@ import { SobreButton } from "../../components/buttonSobre/buttonSobre";
 
 export const Home = (): JSX.Element => {
   return (
-    <div id="bodyMain">
+    <section id="body-home">
       <div style={{ position: "absolute", opacity: 0.1 }}>
         <img
           src={backgroundImage}
@@ -38,11 +38,11 @@ export const Home = (): JSX.Element => {
           </div>
         </div>
         <div id="sobreButtons">
-          <SobreButton text="Ver Projetos" />
-          <SobreButton text="Contato" />
+          <SobreButton text="Ver Projetos" nav="#body-project" />
+          <SobreButton text="Contato" nav="#body-contact" />
         </div>
       </div>
       <Mouse id="mouseIcon" />
-    </div>
+    </section>
   );
 };

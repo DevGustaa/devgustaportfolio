@@ -3,6 +3,14 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #18181b;
+}
+
+section {
+  scroll-margin-top: 0px;
 }

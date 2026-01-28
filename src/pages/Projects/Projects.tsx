@@ -11,7 +11,7 @@ export const Project = (): JSX.Element => {
   });
 
   return (
-    <div className="body-project">
+    <section className="body-project" id="body-project">
       <div>
         <p className={`titleMain ${isVisible ? "animate" : ""}`} ref={ref}>
           Projetos
@@ -33,6 +33,6 @@ export const Project = (): JSX.Element => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
