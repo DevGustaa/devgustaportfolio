@@ -48,10 +48,19 @@
   align-items: center;
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .body-projects.animate {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 750px) {
+  .titleMain {
+    font-size: 3rem;
+    text-align: center;
+  }
 }

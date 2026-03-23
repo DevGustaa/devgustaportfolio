@@ -32,9 +32,7 @@ export const Home = (): JSX.Element => {
           </div>
           <div id="bodyTitle">
             <h1>Desenvolvedor Full Stack</h1>
-            <p id="textDescription">
-              Especialista em Frontend, Backend e Segurança da informação
-            </p>
+            <p id="textDescription">Especialista em Frontend & Backend</p>
           </div>
         </div>
         <div id="sobreButtons">

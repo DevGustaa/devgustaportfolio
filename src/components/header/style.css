@@ -64,6 +64,17 @@
   }
 }
 
-p {
+.titleHeader {
   font-size: 20px;
+}
+
+@media (max-width: 750px) {
+  .titleHeader {
+    font-size: 15px;
+    width: 80%;
+  }
+  #bodyHeader {
+    padding-inline: 5px;
+    justify-content: space-between;
+  }
 }

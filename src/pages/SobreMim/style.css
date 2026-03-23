@@ -58,7 +58,9 @@
   width: 28%;
   opacity: 0;
   transform: translateX(100px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .bodyText.animate {
@@ -93,7 +95,9 @@
   position: relative;
   opacity: 0;
   transform: translateX(-50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .backgroundImage.animate {
@@ -168,5 +172,36 @@
 @media (max-width: 670px) {
   .bodyText {
     width: 100%;
+  }
+}
+
+@media (max-width: 750px) {
+  #body-sobre-title {
+    font-size: 3rem;
+  }
+  .backgroundMiddle {
+    width: 236px;
+    height: 288px;
+  }
+  .backgroundImage {
+    width: 242px;
+    height: 294px;
+  }
+  .backgroundBottom {
+    width: 70px;
+    height: 100px;
+  }
+  #iconGithub {
+    width: 30px;
+    height: 30px;
+  }
+  #title {
+    font-size: 2rem;
+  }
+  #text {
+    font-size: 1rem;
+  }
+  #skillsBox {
+    gap: 10px;
   }
 }

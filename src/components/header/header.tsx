@@ -20,7 +20,7 @@ export const Header = (): JSX.Element => {
             ishome
             chrildren={<img src={EyeSimbol} width={100} />}
           />
-          <p>{`< Gustavo Albuquerque />`}</p>
+          <p className="titleHeader">{`< Gustavo Albuquerque />`}</p>
         </div>
         {width > 850 ? (
           <div id="rightHeader">
@@ -37,10 +37,10 @@ export const Header = (): JSX.Element => {
       </div>
       {open && width <= 850 && (
         <div id="bottomHeader">
-          <MyButton title="Sobre" />
-          <MyButton title="Habilidade" />
-          <MyButton title="Projetos" />
-          <MyButton title="Contato" />
+          <MyButton title="Sobre" nav="#body-sobre" />
+          <MyButton title="Habilidade" nav="#bodyMainTec" />
+          <MyButton title="Projetos" nav="#body-project" />
+          <MyButton title="Contato" nav="#body-contact" />
         </div>
       )}
     </div>
